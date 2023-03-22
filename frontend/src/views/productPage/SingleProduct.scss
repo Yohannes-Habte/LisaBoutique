@@ -1,0 +1,70 @@
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Mixins.scss';
+
+.product-page {
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+
+  .product-container {
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+
+    .single-product {
+      display: grid;
+      grid-template-columns: 40% 39% 21%;
+
+      margin-top: 2.5rem;
+      .product-image-container {
+        width: 300px;
+        height: 600px;
+
+        .single-product-image {
+          max-width: 100%;
+          height: 500px;
+          object-fit: cover;
+          border-radius: 0.2rem;
+        }
+      }
+
+      .sigle-product-status {
+        border: 1px solid green;
+        height: max-content;
+        padding: 0.5rem 1rem;
+        border-radius: 0.2rem;
+
+        .price strong {
+          margin-right: 1rem;
+        }
+        .status-container {
+          & strong {
+            margin-right: 1rem;
+          }
+          .in-stock {
+            width: max-content;
+            padding: 0.2rem 0.5rem;
+            background-color: #9ceb9c;
+            border-radius: 0.2rem;
+          }
+
+          .btn-container {
+            margin-top: 1rem;
+
+            .sigle-product-btn {
+              width: 100%;
+              @include button;
+            }
+          }
+
+          .out-of-stock {
+            width: max-content;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.2rem;
+            background-color: #ed7144;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Mixins.scss';
+
+.ordered-page {
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+
+  .order-container {
+    .order-title {
+      @include title;
+    }
+
+    .order-details {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      column-gap: 1rem;
+      row-gap: 1rem;
+
+      .ordered-items-address-payment {
+        .ordered-items {
+          margin: 1rem 0;
+          padding: 0.5rem 1rem;
+          box-shadow: 0 0 2px;
+          border-radius: 0.2rem;
+          .items-info {
+            .item-container {
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+
+              .image-name {
+                display: flex;
+                gap: 1rem;
+                width: 30px;
+                .image {
+                  width: 100%;
+                  object-fit: cover;
+                  border-radius: 0.2rem;
+                  margin-bottom: 0.3rem;
+                }
+              }
+            }
+          }
+        }
+        .shipping-address {
+          margin: 1rem 0;
+          padding: 0.5rem 1rem;
+          box-shadow: 0 0 2px;
+          border-radius: 0.2rem;
+        }
+        .payment-method {
+          margin: 1rem 0;
+          padding: 0.5rem 1rem;
+          box-shadow: 0 0 2px;
+          border-radius: 0.2rem;
+        }
+      }
+
+      .order-summary {
+        margin: 1rem 0;
+        padding: 0.5rem 1rem;
+        box-shadow: 0 0 2px;
+        border-radius: 0.2rem;
+        height: max-content;
+
+        .order-summary-details {
+          .total-of-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        .order-btn {
+          @include button;
+          margin-bottom: 2rem;
+        }
+
+        .further-info {
+          .text-info {
+            padding: 0.5rem 0;
+          }
+        }
+      }
+    }
+  }
+}

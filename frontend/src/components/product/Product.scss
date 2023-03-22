@@ -1,0 +1,22 @@
+@import "../../Styles/Variables.scss";
+@import "../../Styles/Mixins.scss";
+
+.product {
+
+    .product-name {
+        padding-left: 1rem;
+    }
+
+    .product-details {
+        padding: 0 1rem;
+
+        .product-price {
+            padding: 0.2rem 0;
+        }
+    
+        .product-btn {
+            @include button;
+        }
+    }
+}
+

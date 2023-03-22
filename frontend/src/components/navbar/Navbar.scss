@@ -1,0 +1,18 @@
+@import "../../Styles/Variables.scss";
+
+.navbar-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: $navbar-bg;
+  padding: 0 2rem;
+
+  .list-items {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .cart-items {
+    display: flex;
+    gap: 1rem;
+  }
+}

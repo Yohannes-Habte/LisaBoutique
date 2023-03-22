@@ -1,0 +1,23 @@
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Mixins.scss';
+
+.payment-page {
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+
+  .payment-container {
+   width: 50%;
+   margin: auto;
+
+   .payment-title{
+    @include title;
+   }
+
+   .payment-form {
+    border: 1px solid green;
+    padding: 1rem;
+    border-radius: 0.2rem;
+   }
+  }
+}

@@ -1,0 +1,38 @@
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Mixins.scss';
+
+.shipping-address-page {
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+
+  .shipping-address-container {
+    width: 100%;
+    max-width: 70%;
+    margin: auto;
+
+    .shipping-address-title {
+      @include title;
+    }
+  }
+
+  .shipping-address-form {
+    border: 1px solid $title;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    .shipping-attributes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1rem;
+
+      .label-input-container {
+        @include inputLabel;
+      }
+    }
+
+    .shipping-address-btn {
+      margin-top: 1rem;
+      @include button;
+    }
+  }
+}

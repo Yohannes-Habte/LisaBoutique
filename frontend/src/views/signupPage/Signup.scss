@@ -1,0 +1,57 @@
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Mixins.scss';
+
+.signup-page {
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+
+  .signup-container {
+    .signup-title {
+      @include title;
+    }
+
+    .signup-fieldset {
+      width: 50%;
+      margin: auto;
+      border: 2px solid $title;
+      border-radius: 0.3rem;
+      padding-bottom: 1rem;
+      .signup-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1rem;
+        .icon {
+          font-size: 3rem;
+          color: $title;
+        }
+      }
+
+      .signup-form {
+        width: 95%;
+        margin: auto;
+        padding: 1rem;
+        .signup-label-input {
+          @include inputLabel;
+        }
+        .signup-btn {
+          margin-top: 1rem;
+          @include button;
+        }
+      }
+
+      .already-have-account {
+        width: 95%;
+        margin: auto;
+        display: flex;
+        padding: 1rem;
+        gap: 0.5rem;
+
+        & a {
+          color: blue;
+        }
+      }
+    }
+  }
+}

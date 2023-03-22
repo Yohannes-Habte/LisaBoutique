@@ -1,0 +1,12 @@
+
+/* react bootstrap Sass styling*/
+
+@import "~bootstrap/scss/bootstrap";
+
+/* The app-container is used to keep the footer at the bottom of the page*/
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
