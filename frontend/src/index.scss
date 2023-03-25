@@ -26,7 +26,14 @@ li {
   list-style: none;
 }
 
-a {
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+li a,
+article a {
   text-decoration: none;
 }
 
@@ -35,7 +42,7 @@ a {
   color: #a0a0a0;
 }
 
-.checkout-steps > div.active{
+.checkout-steps > div.active {
   border-bottom: 0.2rem solid #f08000;
   color: #f08000;
 }

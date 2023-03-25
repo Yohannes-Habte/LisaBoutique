@@ -18,6 +18,8 @@ const Navbar = () => {
     localStorage.removeItem('userInfo');
     localStorage.removeItem('shippingAddress');
     localStorage.removeItem('paymentMethod');
+    window.location.href = '/signin'; 
+    //! This solved the issue when the user sign out and direct the user to sign in form
   };
 
   return (

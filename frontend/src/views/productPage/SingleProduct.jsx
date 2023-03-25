@@ -54,7 +54,7 @@ const SingleProduct = (props) => {
       dispatch({ type: ACTION_PRODUCT.FETCH_REQUEST });
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/products/slug/${slug}`
+          process.env.REACT_APP_SERVER_URL + `/api/products/slug/${slug}`
         );
         dispatch({
           type: ACTION_PRODUCT.FETCH_SUCCESS,

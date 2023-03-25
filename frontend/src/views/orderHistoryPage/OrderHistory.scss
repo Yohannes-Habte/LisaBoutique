@@ -1,0 +1,16 @@
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Mixins.scss';
+
+
+.order-history-page {
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+   .order-history-title {
+    @include title;
+   } 
+
+   .table-container{
+    .table{}
+   }
+}

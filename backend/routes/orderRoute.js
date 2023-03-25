@@ -7,7 +7,7 @@ const orderRouter = express.Router();
 orderRouter.post('/', isAuth, createOrder);
 orderRouter.get('/:id', getOrder);
 orderRouter.put('/:id/pay', isAuth, payOrderPayPal);
-orderRouter.get('/user/orders', isAuth, singleUserOrders);
+orderRouter.get('/user/orderHistory', isAuth, singleUserOrders);
 orderRouter.get('/');
 orderRouter.get('/summary');
 orderRouter.put('/:id/deliver');

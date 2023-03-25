@@ -22,7 +22,7 @@ const Cart = () => {
   const updateCart = async (item, quantity) => {
     // Find the item from the backend
     const { data } = await axios.get(
-      `http://localhost:5000/api/products/${item._id}`
+      process.env.REACT_APP_SERVER_URL + `/api/products/${item._id}`
     );
     if (data.countInStock < quantity) {
       window.alert(

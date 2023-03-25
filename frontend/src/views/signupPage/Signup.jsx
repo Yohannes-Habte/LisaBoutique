@@ -69,7 +69,7 @@ const Signup = () => {
 
     try {
       const { data } = await axios.post(
-        'http://localhost:5000/api/users/signup',
+        process.env.REACT_APP_SERVER_URL + '/api/users/signup',
         signupUser
       );
       contextDispatch({ type: ACTION_STORE.USER_SIGNIN, payload: data });
@@ -94,6 +94,8 @@ const Signup = () => {
       <Helmet>
         <title>Sign Up</title>
       </Helmet>
+
+      <CheckoutSteps step1></CheckoutSteps>
 
       <section className="signup-container">
         <h1 className="signup-title"> Sign-Up </h1>

@@ -81,7 +81,7 @@ const PlaceOrder = () => {
     try {
       dispatch({ type: PLCING_ORDER.ORDER_REQUEST });
       const { data } = await axios.post(
-        'http://localhost:5000/api/orders',
+        process.env.REACT_APP_SERVER_URL + '/api/orders',
         newOrder,
         settings
       );

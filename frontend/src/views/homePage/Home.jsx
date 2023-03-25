@@ -44,7 +44,7 @@ const Home = () => {
     const fetchProducts = async () => {
       dispatch({ type: ACTION_PRODUCTS.FETCH_REQUEST });
       try {
-        const response = await axios.get('http://localhost:5000/api/products');
+        const response = await axios.get(process.env.REACT_APP_SERVER_URL + '/api/products');
         dispatch({ type: ACTION_PRODUCTS.FETCH_SUCCESS, payload: response.data });
       } catch (error) {
         dispatch({ type: ACTION_PRODUCTS.FETCH_FAIL, payload: GetError(error) });

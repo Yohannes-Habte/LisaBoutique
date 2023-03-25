@@ -153,7 +153,7 @@ const GetOrdered = () => {
       try {
         dispatch({ type: GETORDERED.FETCH_REQUEST });
         const { data } = await axios.get(
-          `http://localhost:5000/api/orders/${orderId}`,
+          process.env.REACT_APP_SERVER_URL + `/api/orders/${orderId}`,
           {
             headers: { authorization: `Bearer ${userInfo.token}` },
           }
@@ -186,7 +186,7 @@ const GetOrdered = () => {
     } else {
       //!PayPal Step 6: Implement loadPayPalScript function
       const loadPaypalScript = async () => {
-        const { data: clientId } = await axios.get('http://localhost:5000/api/keys/paypal', {
+        const { data: clientId } = await axios.get(process.env.REACT_APP_SERVER_URL + '/api/keys/paypal', {
           headers: { authorization: `Bearer ${userInfo.token}` },
         });
         // In the paypalDispatch funtion, set the type and the value of the paypal
