@@ -114,10 +114,33 @@ export const updateUserProfile = async (req, res, next) => {
 export const getAllUsers = async (req, res, next) => {
   try {
     const users = await User.find();
-    res.send({users: users});
+    res.send({ users: users });
   } catch (error) {
     return next(
       createError(500, 'Database could not be queried. Please try again!')
+    );
+  }
+};
+
+//=====================================================================
+// Create Admin
+//=====================================================================
+
+export const createAdmin = async (req, res, next) => {
+  try {
+    const user = new User({
+      name: 'Admin',
+      email: 'admin@gmail.com',
+      password: 'admins123',
+      isAdmin: true,
+    });
+
+    const saveAdmin = await user.save();
+
+    res.status(201).send(saveAdmin);
+  } catch (error) {
+    return next(
+      createError(500, 'Admin could not be created. Please try again!')
     );
   }
 };

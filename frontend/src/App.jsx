@@ -21,6 +21,11 @@ import GetOrdered from './views/getOrderedPage/GetOrdered';
 import OrderHistory from './views/orderHistoryPage/OrderHistory';
 import Profile from './views/profilePage/Profile';
 import ShippingAddress from './views/shippingPage/ShippingAddress';
+import Dashboard from './views/dashbaordPage/Dashboard';
+import OrdersList from './views/orderListPage/OrdersList';
+import ProductsList from './views/productListPage/ProductsList';
+import ProductEdit from './views/productEditPage/ProductEdit';
+import UsersList from './views/userListPage/UsersList';
 
 const App = () => {
   return (
@@ -43,6 +48,14 @@ const App = () => {
           <Route path="/order/:id" element={<GetOrdered />} />
           <Route path="/orderhistory" element={<OrderHistory />} />
           <Route path="/profile" element={<Profile />} />
+          {/* //! Admin pages only */}
+          <Route path="/admin/dashboard" element={<Dashboard />} /> 
+          <Route path="/admin/orders" element={<OrdersList />} />
+          <Route path="/admin/products" element={<ProductsList />} /> 
+          <Route path="/admin/products/:id" element={<ProductEdit />} /> 
+          <Route path="/admin/users" element={<UsersList />} />
+          <Route path="/admin/users/:id" element={<UsersList />} />
+          
         </Routes>
         <Footer />
       </Router>

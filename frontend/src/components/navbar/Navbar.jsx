@@ -9,7 +9,8 @@ import { LinkContainer } from 'react-router-bootstrap';
 const Navbar = () => {
   // Get the myContext elements to add to cart at the navbar
   const { state, dispatch: contextDispatch } = useContext(myContext);
-  const { cart, cartItems, userInfo } = state;
+  const { cart, userInfo } = state;
+  console.log(userInfo);
 
   // Sign out Function
   const logoutUser = () => {
@@ -18,7 +19,7 @@ const Navbar = () => {
     localStorage.removeItem('userInfo');
     localStorage.removeItem('shippingAddress');
     localStorage.removeItem('paymentMethod');
-    window.location.href = '/signin'; 
+    window.location.href = '/signin';
     //! This solved the issue when the user sign out and direct the user to sign in form
   };
 
@@ -52,7 +53,7 @@ const Navbar = () => {
                 {cart.cartItems.reduce((acc, curr) => acc + curr.quantity, 0)}
               </Badge>
             )}
-          </NavLink>
+          </NavLink> 
         </li>
         {/* //! Show logged in user's name in the navbar */}
         {userInfo ? (
@@ -79,6 +80,24 @@ const Navbar = () => {
           <li cart-item>
             <NavLink to={'/signin'}> Sign In </NavLink>
           </li>
+        )}
+
+        {/* //! Show logged in user is admin, then show .... */}
+        {userInfo && userInfo.isAdmin && (
+          <NavDropdown title="Admin" id="admin-nav-dropdown">
+            <LinkContainer to="/admin/dashboard">
+              <NavDropdown.Item>Dashboard</NavDropdown.Item>
+            </LinkContainer>
+            <LinkContainer to="/admin/products">
+              <NavDropdown.Item>Products</NavDropdown.Item>
+            </LinkContainer>
+            <LinkContainer to="/admin/orders">
+              <NavDropdown.Item>Orders</NavDropdown.Item>
+            </LinkContainer>
+            <LinkContainer to="/admin/users">
+              <NavDropdown.Item>Users</NavDropdown.Item>
+            </LinkContainer>
+          </NavDropdown>
         )}
       </ul>
     </nav>

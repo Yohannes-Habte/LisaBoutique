@@ -41,7 +41,7 @@ export const getOrder = async (req, res, next) => {
     return res.status(200).send(order);
   } catch (error) {
     console.log(error);
-    next(createError(404, 'Order could not be queried. Please try again?'));
+    next(createError(404, 'Order could not be queried. Please try again.'));
   }
 };
 
@@ -85,5 +85,39 @@ export const singleUserOrders = async (req, res) => {
   } catch (error) {
     console.log(error);
     next(createError(500, "Database couldn't be queried. Please try again!"));
+  }
+};
+
+//===================================================================
+// orders summary
+//===================================================================
+
+export const orderSummary = async (req, res, next) => {
+  try {
+    // Total number of orders and sales revenue
+    const orders = await Order.aggregate([
+      {
+        $group: {
+          _id: null,
+          numOrders: { $sum: 1 },
+          totalSales: { $sum: '$totalPrice' },
+        },
+      },
+    ]);
+
+    // total number of users
+    const users = await User.aggregate([
+      {
+        $group: {
+          _id: null, 
+          numUsers: { $sum: 1 },
+        },
+      },
+    ]);
+
+   
+    res.send({ users, orders });
+  } catch (error) {
+    next(createError(500, 'Summary could not be queried. Please try again.'));
   }
 };

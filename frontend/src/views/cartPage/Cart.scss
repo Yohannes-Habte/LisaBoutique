@@ -1,3 +1,6 @@
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Mixins.scss';
+
 .cart-page {
   width: 100%;
   max-width: 1024px;
@@ -68,6 +71,7 @@
       }
 
       .checkout-btn {
+        @include button;
       }
     }
   }

@@ -6,6 +6,7 @@ const userRouter = express.Router();
 
 userRouter.post('/signup', signupUser);
 userRouter.post('/signin', signinUser);
+userRouter.get("/createAdmin")
 userRouter.get('/', getAllUsers);
 userRouter.get('/:id');
 userRouter.put('/profile', isAuth, updateUserProfile);

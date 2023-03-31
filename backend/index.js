@@ -20,6 +20,7 @@ import productRouter from './routes/productRoute.js';
 import userRouter from './routes/userRoute.js';
 import orderRouter from './routes/orderRoute.js';
 import testimonialRrouter from './routes/testimonialRoute.js';
+import aboutRouter from "./routes/aboutRoute.js"
 import globalErrorHandler from './middleware/globalErrorHandler.js';
 
 const app = express();
@@ -76,6 +77,7 @@ app.use('/api/seed', seedRouter);
 app.use('/api/products', productRouter);
 app.use('/api/users', userRouter);
 app.use('/api/orders', orderRouter);
+app.use('/api/about', aboutRouter);
 //! upload-Step 2: State the endpoint and upload type
 app.use('/api/testimonials', upload.single('file'), testimonialRrouter);
 //! upload-Step 3: State the static express

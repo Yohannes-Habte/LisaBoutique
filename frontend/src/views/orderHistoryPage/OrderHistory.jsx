@@ -96,7 +96,7 @@ const OrderHistory = () => {
               <tbody>
                 {orders.map((order) => {
                   return (
-                    <tr>
+                    <tr key={order._id}>
                       <td> {order._id} </td>
                       {/* //! substring is used to show only the date, but not the time of order */}
                       <td> {order.createdAt.substring(0, 10)} </td>

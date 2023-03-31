@@ -1,0 +1,25 @@
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Mixins.scss';
+
+.products-page {
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+  .products-container {
+    .products-title {
+      @include title;
+    }
+
+    .product-btn-container {
+      .product-btn {
+        @include button;
+      }
+    }
+
+    .table {
+      .td-btn {
+        @include button;
+      }
+    }
+  }
+}

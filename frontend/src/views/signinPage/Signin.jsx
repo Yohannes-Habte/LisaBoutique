@@ -116,7 +116,7 @@ const Signin = () => {
                 <label htmlFor="keepMe">Keep me signed in</label>
               </div>
               <p className="forget-password">
-                <a href="#"> Forget your password? </a>
+                <a href="#"> Forget your password? </a> 
               </p>
             </div>
             <button className="login-btn">Sign In</button>
