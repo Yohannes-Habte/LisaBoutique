@@ -36,7 +36,8 @@ export const isAuth = (req, res, next) => {
       //! The "jwt.verify" keeps three items: token, secret key and the callback function  with two parameters (err, decode))
       // err= if the token is invalid
       // if the token is valid: (decode = is the decrypted verion of token that holds the user info)
-      jwt.verify(token, process.env.JWT_SECRET, (err, decode) => { // decode keeps the user info
+      jwt.verify(token, process.env.JWT_SECRET, (err, decode) => {
+        // decode keeps the user info
         if (err) {
           res.status(401).send({ message: 'Invalid Token' });
         } else {

@@ -4,7 +4,6 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import 'react-toastify/dist/ReactToastify.css';
 import Home from './views/homePage/Home';
 import Contact from './views/contactPage/Contact';
 import Navbar from './components/navbar/Navbar';
